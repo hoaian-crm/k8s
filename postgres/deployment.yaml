@@ -21,10 +21,6 @@ spec:
         - name: postgresdb
           # pull postgresimage from docker hub
           image: postgres
-          resources:
-            limits:
-              memory: "4Gi"
-              cpu: "2"
           ports:
             # Assign ports to expose container
             - containerPort: 5432
