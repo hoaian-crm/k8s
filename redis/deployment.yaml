@@ -5,6 +5,8 @@ kind: Deployment
 metadata:
   # The name of the Deployment
   name: redis
+  labels:
+    external: "true"
 spec:
   selector:
     # labels the pods

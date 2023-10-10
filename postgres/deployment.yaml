@@ -3,8 +3,9 @@ apiVersion: apps/v1
 # Deployment object
 kind: Deployment
 metadata:
-  # The name of the Deployment
   name: postgresdb
+  labels:
+    external: "true"
 spec:
   selector:
     # labels the pods
