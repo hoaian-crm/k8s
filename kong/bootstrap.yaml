@@ -7,6 +7,10 @@ kind: Job
 metadata:
   name: kong-bootstrap
 spec:
+  selector:
+    # labels the pods
+    matchLabels:
+      app: kong
   template:
     metadata:
       labels:
