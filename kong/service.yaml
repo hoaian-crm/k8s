@@ -8,12 +8,11 @@ metadata:
     app: kong
 spec:
   # Choose how to expose your service
-  type: NodePort
   ports:
     # The port number to expose the service
     - protocol: TCP
       port: 5432
-      nodePort: 30003
+      targetPort: 5432
   # Pod to route service traffic
   selector:
     app: kong
