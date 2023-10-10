@@ -6,6 +6,7 @@ command note:
 
 ```
 sudo systemctl daemon-reload
+kubectl get pods -A
 ```
 
 ### Kubelet
