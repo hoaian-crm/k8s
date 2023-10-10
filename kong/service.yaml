@@ -1,0 +1,19 @@
+apiVersion: v1
+# Kind for service
+kind: Service
+metadata:
+  # Name your service
+  name: kong
+  labels:
+    app: kong
+spec:
+  # Choose how to expose your service
+  type: NodePort
+  ports:
+    # The port number to expose the service
+    - protocol: TCP
+      port: 5432
+      nodePort: 30003
+  # Pod to route service traffic
+  selector:
+    app: kong
