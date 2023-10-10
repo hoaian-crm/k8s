@@ -12,12 +12,10 @@ on:
     branches: ["master"]
 
 jobs:
-  build:
+  update-postgres:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v1
-
       - uses: actions-hub/kubectl@master
         env:
           KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
