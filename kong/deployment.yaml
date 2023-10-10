@@ -3,17 +3,17 @@ apiVersion: apps/v1
 # Deployment object
 kind: Deployment
 metadata:
-  name: kong
+  name: kong-gateway
 spec:
   selector:
     # labels the pods
     matchLabels:
-      app: kong
+      app: kong-gateway
   template:
     metadata:
       labels:
         # The label the pods created from the pod template should have
-        app: kong
+        app: kong-gateway
     spec:
       containers:
         # The container name to execute pods
