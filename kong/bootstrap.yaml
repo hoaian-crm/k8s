@@ -1,16 +1,12 @@
 # Kong bootstrap only run one time
 
 # Kubernetes API version
-apiVersion: apps/v1
+apiVersion: batch/v1
 # Deployment object
 kind: Job
 metadata:
   name: kong-bootstrap
 spec:
-  selector:
-    # labels the pods
-    matchLabels:
-      app: kong
   template:
     metadata:
       labels:
