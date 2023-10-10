@@ -25,4 +25,4 @@ spec:
                 name: kong-env
           command:
             - kong migrations bootstrap
-      restartPolicy: Never
+      # restartPolicy: Never
