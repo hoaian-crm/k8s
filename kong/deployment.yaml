@@ -19,7 +19,7 @@ spec:
         # The container name to execute pods
         - name: kong
           # pull postgresimage from docker hub
-          image: kong:3.4.1
+          image: kong:3.4.0-ubuntu
           ports:
             # Assign ports to expose container
             - containerPort: 8000
