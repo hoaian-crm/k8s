@@ -3,21 +3,19 @@
 # Kubernetes API version
 apiVersion: apps/v1
 # Deployment object
-kind: Deployment
+kind: Job
 metadata:
-  name: postgresdb
-  labels:
-    external: "true"
+  name: kong-bootstrap
 spec:
   selector:
     # labels the pods
     matchLabels:
-      app: postgresdb
+      app: kong
   template:
     metadata:
       labels:
         # The label the pods created from the pod template should have
-        app: postgresdb
+        app: kong
     spec:
       containers:
         # The container name to execute pods
@@ -35,4 +33,4 @@ spec:
             limits:
               cpu: 1
               memory: 1Gi
-          restartPolicy: Never
+      restartPolicy: Never
