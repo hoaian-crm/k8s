@@ -3,23 +3,23 @@ apiVersion: apps/v1
 # Deployment object
 kind: Deployment
 metadata:
-  name: postgresdb
+  name: kong
   labels:
     external: "true"
 spec:
   selector:
     # labels the pods
     matchLabels:
-      app: postgresdb
+      app: kong
   template:
     metadata:
       labels:
         # The label the pods created from the pod template should have
-        app: postgresdb
+        app: kong
     spec:
       containers:
         # The container name to execute pods
-        - name: postgresdb
+        - name: kong
           # pull postgresimage from docker hub
           image: kong:3.4.1
           ports:
