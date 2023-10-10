@@ -14,9 +14,11 @@ spec:
     - protocol: TCP
       port: 6379
       name: redis-backend
+      nodePort: 30001
     - protocol: TCP
       port: 8001
       name: redis-manager
+      nodePort: 30002
 
   # Pod to route service traffic
   selector:
