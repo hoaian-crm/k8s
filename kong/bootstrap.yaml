@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         # The container name to execute pods
-        - name: postgresdb
+        - name: kong-bootstrap
           # pull postgresimage from docker hub
           image: kong:3.4.1
           envFrom:
@@ -30,9 +30,9 @@ spec:
                 # This should be the ConfigMap name created ealier
                 name: kong-env
           command:
-            - kong kong migrations bootstrap
+            - kong migrations bootstrap
           resources:
             limits:
               cpu: 1
               memory: 1Gi
-      restartPolicy: Never
+          restartPolicy: Never
