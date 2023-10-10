@@ -1,0 +1,27 @@
+# Kubernetes API version
+apiVersion: apps/v1
+# Deployment object
+kind: Deployment
+metadata:
+  # The name of the Deployment
+  name: redis
+spec:
+  selector:
+    # labels the pods
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        # The label the pods created from the pod template should have
+        app: redis
+    spec:
+      containers:
+        # The container name to execute pods
+        - name: redis
+          # pull postgresimage from docker hub
+          image: redis/redis-stack:latest
+          ports:
+            # Assign ports to expose container
+            - containerPort: 6379
+            - containerPort: 8001
