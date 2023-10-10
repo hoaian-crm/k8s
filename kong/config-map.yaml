@@ -11,7 +11,6 @@ data:
   POSTGRES_DB: kong
   POSTGRES_USER: kong
   POSTGRES_PASSWORD: kong
-
   # Kong
   KONG_DATABASE: postgres
   KONG_PG_HOST: kong-db
