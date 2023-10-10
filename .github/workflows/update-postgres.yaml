@@ -11,9 +11,6 @@ on:
   pull_request:
     branches: ["master"]
 
-env:
-  KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,7 +20,6 @@ jobs:
 
       - uses: actions-hub/kubectl@master
         env:
-          KUBE_CONFIG: ${{ env.KUBE_CONFIG }}
-
+          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
         with:
           args: apply -f ./postgres
