@@ -3,8 +3,6 @@ kind: Ingress
 metadata:
   name: redis-ingress
 spec:
-  selector:
-    - app:redis
   rules:
     - host: "redis.footing.world"
       http:
