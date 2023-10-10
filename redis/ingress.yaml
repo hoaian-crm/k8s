@@ -14,3 +14,10 @@ spec:
                 name: redis
                 port:
                   number: 6379
+          - path: /manager
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: redis
+                port:
+                  number: 8001
