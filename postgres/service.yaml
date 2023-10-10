@@ -14,7 +14,7 @@ spec:
     - protocol: TCP
       port: 5555
       targetPort: 5432
-      nodePort: 5555
+      nodePort: 55555
   # Pod to route service traffic
   selector:
     app: postgresdb
