@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: redis-ingress
+spec:
+  selector:
+    - app:redis
+  rules:
+    - host: "redis.footing.world"
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                - name: redis
+                  port: 6379
