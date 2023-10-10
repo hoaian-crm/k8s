@@ -4,6 +4,9 @@ command note:
 
 ### Common
 
+
+30000-32767
+
 ```
 sudo systemctl daemon-reload
 kubectl get pods -A
