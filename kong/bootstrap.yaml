@@ -1,0 +1,38 @@
+# Kong bootstrap only run one time
+
+# Kubernetes API version
+apiVersion: apps/v1
+# Deployment object
+kind: Deployment
+metadata:
+  name: postgresdb
+  labels:
+    external: "true"
+spec:
+  selector:
+    # labels the pods
+    matchLabels:
+      app: postgresdb
+  template:
+    metadata:
+      labels:
+        # The label the pods created from the pod template should have
+        app: postgresdb
+    spec:
+      containers:
+        # The container name to execute pods
+        - name: postgresdb
+          # pull postgresimage from docker hub
+          image: kong:3.4.1
+          envFrom:
+            # Load the environment variables/PostgresSQL credentials
+            - configMapRef:
+                # This should be the ConfigMap name created ealier
+                name: kong-env
+          command:
+            - kong kong migrations bootstrap
+          resources:
+            limits:
+              cpu: 1
+              memory: 1Gi
+      restartPolicy: Never
