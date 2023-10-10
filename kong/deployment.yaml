@@ -4,8 +4,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kong
-  labels:
-    external: "true"
 spec:
   selector:
     # labels the pods
