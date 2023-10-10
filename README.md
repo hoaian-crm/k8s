@@ -11,7 +11,7 @@ sudo systemctl daemon-reload
 ### Kubelet
 
 ```
-sudo journalctl -u kubelet
+sudo journalctl -u kubelet -f
 sudo systemctl restart kubelet
 sudo systemctl status kubelet
 ```
