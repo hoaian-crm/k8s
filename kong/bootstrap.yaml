@@ -1,0 +1,27 @@
+# Kong bootstrap only run one time
+
+# Kubernetes API version
+apiVersion: batch/v1
+# Deployment object
+kind: Job
+metadata:
+  name: kong-bootstrap
+spec:
+  template:
+    metadata:
+      labels:
+        # The label the pods created from the pod template should have
+        app: kong
+    spec:
+      containers:
+        # The container name to execute pods
+        - name: kong-bootstrap
+          # pull postgresimage from docker hub
+          image: kong:3.4.0-ubuntu
+          envFrom:
+            # Load the environment variables/PostgresSQL credentials
+            - configMapRef:
+                # This should be the ConfigMap name created ealier
+                name: kong-env
+          command: ["kong", "migrations", "up"]
+      restartPolicy: Never
