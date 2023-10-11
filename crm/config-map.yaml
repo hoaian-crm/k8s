@@ -21,7 +21,7 @@ data:
   # Redis config
   REDIS_HOST: "redis:6379"
   # Queue config
-  AMPQ_LINK: "amqp://rabbitmq:password@message-broker:5672/"
+  AMPQ_LINK: "amqp://user:password@rabbitmq:5672/"
   CHANNEL_REQUIRES: "notification,mail"
   # Role config
   USER_ISS: "123123123"
