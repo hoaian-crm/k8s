@@ -1,0 +1,27 @@
+apiVersion: v1
+# Kind for kubernets ConfigMap
+kind: ConfigMap
+metadata:
+  # Name your ConfigMap
+  name: crm-env
+  labels:
+    app: crm
+data:
+  # Database
+  GORM_DSN: "host=postgres user=crm-manager password=strong#password dbname=crm-dev port=5432"
+  # Common
+  DEFAULT_AVATAR: "https://friendify-backup.s3.ap-southeast-1.amazonaws.com/avatars/default.png"
+  #Jwt
+  JWT_SECRECT: "concatcon"
+  # Mail Service
+  MAIL_USER: "hoaian412003@gmail.com"
+  MAIL_PASSWORD: "zknvvqtthmlxrngg"
+  MAIL_HOST: "smtp.gmail.com"
+  MAIL_PORT: "587"
+  # Redis config
+  REDIS_HOST: "redis:6379"
+  # Queue config
+  AMPQ_LINK: "amqp://rabbitmq:password@message-broker:5672/"
+  CHANNEL_REQUIRES: "notification,mail"
+  # Role config
+  USER_ISS: "123123123"

@@ -1,0 +1,26 @@
+# Kubernetes API version
+apiVersion: apps/v1
+# Deployment object
+kind: Deployment
+metadata:
+  name: authentication-service
+spec:
+  selector:
+    # labels the pods
+    matchLabels:
+      app: crm
+
+  template:
+    metadata:
+      labels:
+        # The label the pods created from the pod template should have
+        app: crm
+
+    spec:
+      containers:
+        # The container name to execute pods
+        - name: authentication-service
+          image: 11112003/crm-authentication:latest
+        envFrom:
+          - configMapRef:
+            name: crm-env
