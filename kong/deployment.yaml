@@ -27,6 +27,7 @@ spec:
             - containerPort: 8002
             - containerPort: 8443
             - containerPort: 8444
+            - containerPort: 8445
           envFrom:
             # Load the environment variables/PostgresSQL credentials
             - configMapRef:
