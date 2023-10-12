@@ -23,8 +23,9 @@ spec:
           ports:
             # Assign ports to expose container
             - containerPort: 8000
-            - containerPort: 8443
             - containerPort: 8001
+            - containerPort: 8002
+            - containerPort: 8443
             - containerPort: 8444
           envFrom:
             # Load the environment variables/PostgresSQL credentials
