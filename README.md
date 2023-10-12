@@ -2,6 +2,9 @@
 
 command note:
 
+### Installation:
+chmod + x install.sh && ./install.sh
+
 ### Common
 
 30000-32767
