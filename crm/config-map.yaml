@@ -12,7 +12,7 @@ data:
   # Common
   DEFAULT_AVATAR: "https://friendify-backup.s3.ap-southeast-1.amazonaws.com/avatars/default.png"
   #Jwt
-  JWT_SECRECT: "concatcon"
+  JWT_SECRECT: "123123123"
   # Mail Service
   MAIL_USER: "hoaian412003@gmail.com"
   MAIL_PASSWORD: "zknvvqtthmlxrngg"
@@ -24,4 +24,4 @@ data:
   AMPQ_LINK: "amqp://user:password@rabbitmq:5672/"
   CHANNEL_REQUIRES: "notification,mail"
   # Role config
-  USER_ISS: "123123123"
+  USER_ISS: "user_good"
