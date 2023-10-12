@@ -39,3 +39,4 @@ spec:
             - configMapRef:
                 # This should be the ConfigMap name created ealier
                 name: kong-env
+          imagePullPolicy: Always
