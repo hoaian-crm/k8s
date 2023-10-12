@@ -31,4 +31,4 @@ spec:
       name: kong-admin-api
   # Pod to route service traffic
   selector:
-    app: kong
+    name: kong-gateway
