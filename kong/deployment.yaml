@@ -20,6 +20,7 @@ spec:
         # The container name to execute pods
         - name: kong
           # pull postgresimage from docker hub
+          user: root
           image: 11112003/kong-rebuild:latest
           ports:
             # Assign ports to expose container
@@ -29,6 +30,10 @@ spec:
             - containerPort: 8443
             - containerPort: 8444
             - containerPort: 8445
+          resources:
+            limits:
+              cpu: 1
+              memory: "2Gi"
           envFrom:
             # Load the environment variables/PostgresSQL credentials
             - configMapRef:
