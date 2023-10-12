@@ -14,6 +14,7 @@ spec:
       labels:
         # The label the pods created from the pod template should have
         app: kong
+        name: kong-db
     spec:
       containers:
         # The container name to execute pods

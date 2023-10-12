@@ -13,7 +13,7 @@ data:
   POSTGRES_PASSWORD: kong
   # Kong
   KONG_DATABASE: postgres
-  KONG_PG_HOST: kong
+  KONG_PG_HOST: kong-db
   KONG_PG_USER: kong
   KONG_PG_PASSWORD: kong
   KONG_PROXY_ACCESS_LOG: /dev/stdout
