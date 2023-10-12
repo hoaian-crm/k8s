@@ -8,12 +8,12 @@ spec:
   selector:
     # labels the pods
     matchLabels:
-      app: kong-gateway
+      app: kong
   template:
     metadata:
       labels:
         # The label the pods created from the pod template should have
-        app: kong-gateway
+        app: kong
     spec:
       containers:
         # The container name to execute pods
