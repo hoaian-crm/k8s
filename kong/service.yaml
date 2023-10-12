@@ -24,6 +24,11 @@ spec:
       targetPort: 8443
       nodePort: 30010
       name: kong-api
+    - protocol: TCP
+      port: 8444
+      targetPort: 8444
+      nodePort: 30011
+      name: kong-admin-api
   # Pod to route service traffic
   selector:
     app: kong
