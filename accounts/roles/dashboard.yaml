@@ -4,5 +4,5 @@ metadata:
   name: dashboard-full-access
 rules:
 - apiGroups: ["*"]
-  resources: ["*"]
+  resources: ["*", "persistentvolumes"]
   verbs: ["*"]
