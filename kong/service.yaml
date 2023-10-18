@@ -25,6 +25,11 @@ spec:
       targetPort: 8444
       nodePort: 30011
       name: kong-admin-api
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
+      nodePort: 30015
+      name: kong-api-http
   # Pod to route service traffic
   selector:
     name: kong-gateway
