@@ -15,4 +15,5 @@ spec:
       name: management
     - port: 5672
       targetPort: 5672
+      nodePort: 30014
       name: connection
