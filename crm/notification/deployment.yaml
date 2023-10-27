@@ -3,7 +3,7 @@ apiVersion: apps/v1
 # Deployment object
 kind: Deployment
 metadata:
-  name: authentication-service
+  name: notification-service
 spec:
   replicas: 1
   selector:
