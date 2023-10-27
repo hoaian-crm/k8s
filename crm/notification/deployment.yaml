@@ -20,7 +20,7 @@ spec:
       containers:
         # The container name to execute pods
         - name: authentication-service
-          image: "11112003/crm-authentication:master"
+          image: "11112003/crm-notification:master"
           envFrom:
             - configMapRef:
                 name: "crm-env"
