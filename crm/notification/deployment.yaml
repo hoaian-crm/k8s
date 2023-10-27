@@ -15,7 +15,7 @@ spec:
       labels:
         # The label the pods created from the pod template should have
         app: crm
-        name: authentication-service
+        name: notification-service
     spec:
       containers:
         # The container name to execute pods
