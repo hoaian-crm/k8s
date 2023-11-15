@@ -13,7 +13,7 @@ spec:
     # The port number to expose the service
     - protocol: TCP
       port: 3000
-      nodePort: 300016
+      nodePort: 30016
 
   # Pod to route service traffic
   selector:
