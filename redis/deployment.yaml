@@ -27,3 +27,7 @@ spec:
             # Assign ports to expose container
             - containerPort: 6379
             - containerPort: 8001
+          resources:
+            limits:
+              memory: "1Gi"
+              cpu: "0.5"
