@@ -33,6 +33,6 @@ data:
   # Role config
   USER_ISS: "user_good"
   SUPER_ADMIN_ROLE: Root
-  DEFAULT_ROLE_ID: 2
+  DEFAULT_ROLE_ID: "2"
   # Up stream
   AUTHENTICATION_HOST: http://authentication-service:8080/api/v1
