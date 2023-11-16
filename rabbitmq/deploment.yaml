@@ -18,7 +18,7 @@ spec:
           resources:
             limits:
               memory: "250Mi"
-              cpu: "0.5"
+              cpu: "0.25"
           envFrom:
             - configMapRef:
                 name: rabbitmq-env

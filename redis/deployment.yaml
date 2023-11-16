@@ -8,6 +8,7 @@ metadata:
   labels:
     external: "true"
 spec:
+  replicas: 1
   selector:
     # labels the pods
     matchLabels:
@@ -30,4 +31,4 @@ spec:
           resources:
             limits:
               memory: "1Gi"
-              cpu: "0.5"
+              cpu: "0.25"
