@@ -34,6 +34,10 @@ spec:
             # The volume mounts  for the container
             - mountPath: /var/lib/postgres/data
               name: db-data
+          resources:
+            limits:
+              memory: "1Gi"
+              cpu: "0.5"
       # Volumes attached to the pod
       volumes:
         - name: db-data
