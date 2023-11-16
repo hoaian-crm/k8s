@@ -7,6 +7,7 @@ metadata:
   labels:
     external: "true"
 spec:
+  replicas: 1
   selector:
     # labels the pods
     matchLabels:
