@@ -39,3 +39,5 @@ data:
   Authentication: http://authentication-service:8080/api/v1
   Plugin: http://plugins-service:3000/api/v1
   Mail: http://mail-service:3000/api/v1
+  # Grpc
+  EVENT_GRPC: localhost:5000
