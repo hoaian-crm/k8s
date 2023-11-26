@@ -16,4 +16,4 @@ spec:
   # Pod to route service traffic
   selector:
     app: crm
-    name: plugins-service
+    name: plugins
