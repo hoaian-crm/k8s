@@ -28,8 +28,8 @@ data:
   # Redis config
   REDIS_HOST: "redis:6379"
   # Queue config
-  AMQP: "amqp://user:password@rabbitmq:5672/"
-  AMPQ: "amqp://user:password@rabbitmq:5672/"
+  AMQP_LINK: "amqp://user:password@rabbitmq:5672/"
+  AMPQ_LINK: "amqp://user:password@rabbitmq:5672/"
   CHANNEL_REQUIRES: "notification,mail,user_registered"
   # Role config
   USER_ISS: "user_good"
