@@ -35,4 +35,5 @@ data:
   SUPER_ADMIN_ROLE: Root
   DEFAULT_ROLE_ID: "2"
   # Up stream
-  AUTHENTICATION_HOST: http://authentication-service:8080/api/v1
+  Authentication: http://authentication-service:8080/api/v1
+  Plugin: http://plugins-service:3000/api/v1

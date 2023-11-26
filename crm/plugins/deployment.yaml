@@ -1,9 +1,10 @@
+
 # Kubernetes API version
 apiVersion: apps/v1
 # Deployment object
 kind: Deployment
 metadata:
-  name: notification-service
+  name: plugins
 spec:
   replicas: 1
   selector:
@@ -15,20 +16,20 @@ spec:
       labels:
         # The label the pods created from the pod template should have
         app: crm
-        name: notification-service
+        name: plugins
     spec:
       containers:
         # The container name to execute pods
-        - name: authentication-service
-          image: "11112003/crm-notification:master"
+        - name: plugins
+          image: "11112003/crm-plugins:master"
           envFrom:
             - configMapRef:
                 name: "crm-env"
           ports:
             # Assign ports to expose container
-            - containerPort: 8080
+            - containerPort: 3000
           imagePullPolicy: Always
-          resources:
-            limits:
-              memory: "0.5Gi"
-              cpu: "0.25"
+          # resources:
+          #   limits:
+          #     memory: "1Gi"
+          #     cpu: "0.25"
