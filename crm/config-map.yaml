@@ -20,11 +20,6 @@ data:
   DEFAULT_AVATAR: "https://friendify-backup.s3.ap-southeast-1.amazonaws.com/avatars/default.png"
   #Jwt
   JWT_SECRECT: "123123123"
-  # Mail Service
-  MAIL_USER: "hoaian412003@gmail.com"
-  MAIL_PASSWORD: "zknvvqtthmlxrngg"
-  MAIL_HOST: "smtp.gmail.com"
-  MAIL_PORT: "587"
   # Redis config
   REDIS_HOST: "redis:6379"
   # Queue config
