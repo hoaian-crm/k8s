@@ -12,9 +12,10 @@ spec:
     # The port number to expose the service
     - protocol: TCP
       port: 3000
+      nodePort: 30020
     - protocol: TCP
       port: 5000
-      nodePort: 30020
+      nodePort: 30021
 
   # Pod to route service traffic
   selector:
