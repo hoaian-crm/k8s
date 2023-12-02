@@ -21,7 +21,9 @@ data:
   #Jwt
   JWT_SECRECT: "123123123"
   # Redis config
-  REDIS_HOST: "redis:6379"
+  REDIS_URL: "redis:6379"
+  REDIS_HOST: "redis"
+  REDIS_PORT: "6579"
   # Queue config
   AMQP_LINK: "amqp://user:password@rabbitmq:5672/"
   AMPQ_LINK: "amqp://user:password@rabbitmq:5672/"
