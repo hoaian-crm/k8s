@@ -1,0 +1,22 @@
+apiVersion: v1
+# Kind for service
+kind: Service
+metadata:
+  # Name your service
+  name: storage-service
+  labels:
+    app: crm
+spec:
+  # Choose how to expose your service
+  ports:
+    # The port number to expose the service
+    - protocol: TCP
+      port: 3000
+    - protocol: TCP
+      port: 5000
+      nodePort: 30020
+
+  # Pod to route service traffic
+  selector:
+    app: crm
+    name: mail

@@ -36,3 +36,4 @@ data:
   Mail: http://mail-service:3000/api/v1
   # Grpc
   EVENT_GRPC: event-gateway:5000
+  STORAGE_GRPC: storage-service:5000
