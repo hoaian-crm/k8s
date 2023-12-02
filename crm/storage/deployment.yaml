@@ -3,7 +3,7 @@ apiVersion: apps/v1
 # Deployment object
 kind: Deployment
 metadata:
-  name: mail
+  name: storage
 spec:
   replicas: 1
   selector:
@@ -15,12 +15,15 @@ spec:
       labels:
         # The label the pods created from the pod template should have
         app: crm
-        name: mail
+        name: storage
     spec:
       containers:
         # The container name to execute pods
         - name: storage
           image: "11112003/crm-storage:master"
+          volumeMounts:
+            - name: file
+              mountPath: /usr/app/files
           envFrom:
             - configMapRef:
                 name: "crm-env"
@@ -33,3 +36,7 @@ spec:
           #   limits:
           #     memory: "1Gi"
           #     cpu: "0.25"
+      volumes:
+        - name: file
+          persistentVolumeClaim:
+            claimName: storage-claim

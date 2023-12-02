@@ -25,4 +25,4 @@ spec:
   # Pod to route service traffic
   selector:
     app: crm
-    name: mail
+    name: storage
