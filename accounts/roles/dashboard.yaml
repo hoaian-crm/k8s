@@ -3,6 +3,6 @@ kind: ClusterRole
 metadata:
   name: dashboard-full-access
 rules:
-- apiGroups: ["*"]
-  resources: ["*", "persistentvolumes"]
-  verbs: ["*"]
+  - apiGroups: ["*"]
+    resources: ["*", "persistentvolumes", "namespaces"]
+    verbs: ["*"]
