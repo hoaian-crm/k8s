@@ -6,10 +6,6 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: dashboard
-    namespace: default
-  - kind: ServiceAccount
-    name: dashboard
-    namespace: mattermost
 roleRef:
   kind: ClusterRole
   name: dashboard-full-access
