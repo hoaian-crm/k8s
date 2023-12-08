@@ -17,6 +17,11 @@ spec:
           image: postgres:13-alpine
           ports:
             - containerPort: 5432
+          envFrom:
+            # Load the environment variables/PostgresSQL credentials
+            - configMapRef:
+                # This should be the ConfigMap name created ealier
+                name: mattermost-config
       volumes:
         - name: db-data
           persistentVolumeClaim:
