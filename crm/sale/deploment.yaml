@@ -3,7 +3,7 @@ apiVersion: apps/v1
 # Deployment object
 kind: Deployment
 metadata:
-  name: storage
+  name: sale
 spec:
   replicas: 1
   selector:
