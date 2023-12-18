@@ -3,9 +3,9 @@ apiVersion: apps/v1
 # Deployment object
 kind: Deployment
 metadata:
-  name: mail
+  name: web
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     # labels the pods
     matchLabels:
@@ -15,20 +15,15 @@ spec:
       labels:
         # The label the pods created from the pod template should have
         app: crm
-        name: mail
+        name: web
     spec:
       containers:
         # The container name to execute pods
-        - name: mail
-          image: "11112003/crm-mail:master"
+        - name: web
+          image: "11112003/crm-web:master"
           envFrom:
             - configMapRef:
                 name: "crm-env"
           ports:
-            # Assign ports to expose container
-            - containerPort: 3000
+            - containerPort: 80 # Node port
           imagePullPolicy: Always
-          # resources:
-          #   limits:
-          #     memory: "1Gi"
-          #     cpu: "0.25"
