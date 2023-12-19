@@ -7,13 +7,12 @@ metadata:
   labels:
     app: crm
 spec:
-  type: NodePort
   # Choose how to expose your service
   ports:
     # The port number to expose the service
     - protocol: TCP
       port: 3000
-      nodePort: 30016
+      name: api
 
   # Pod to route service traffic
   selector:
