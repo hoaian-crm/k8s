@@ -8,14 +8,11 @@ metadata:
     app: crm
 spec:
   # Choose how to expose your service
-  type: LoadBalancer
   ports:
     # The port number to expose the service
     - protocol: TCP
       port: 80
       targetPort: 80
-      name: http
-  # Pod to route service traffic
   selector:
     app: crm
     name: web

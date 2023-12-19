@@ -2,16 +2,24 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: web
+  annotations:
+    cert-manager.io/issuer: "crm-issuer"
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
 
 spec:
+  tls:
+    - hosts:
+        - relationc.com
+      secretName: crm-web-ssl
   rules:
-    - host: hoaian.ddns.net
+    - host: relationc.com
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name:  web
+                name: web
                 port:
                   number: 80
