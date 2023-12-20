@@ -28,7 +28,3 @@ spec:
             # Assign ports to expose container
             - containerPort: 8080
           imagePullPolicy: Always
-          # resources:
-          #   limits:
-          #     memory: "1Gi"
-          #     cpu: "0.25"

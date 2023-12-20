@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: redis-manager
+  labels:
+    name: redis-manager
+spec:
+  rules:
+    - host: "redis.relationc.com"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: redis
+                port:
+                  number: 8001
