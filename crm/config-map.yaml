@@ -40,3 +40,4 @@ data:
   EVENT_GRPC: event-gateway:5000
   STORAGE_GRPC: storage-service:50051
   Sale: http://sale-service:3000/api/v1
+  Product: http://products-service:3000/api/v1
