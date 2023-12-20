@@ -4,7 +4,15 @@ metadata:
   name: redis-manager
   labels:
     name: redis-manager
+  annotations:
+    cert-manager.io/issuer: "crm-issuer"
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
 spec:
+  tls:
+    - hosts:
+        - redis.relationc.com
+      secretName: redis-manager-ssl
   rules:
     - host: "redis.relationc.com"
       http:
