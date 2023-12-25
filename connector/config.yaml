@@ -1,0 +1,7 @@
+connectors:
+  - connector_id: "Km77n4wBDRL9j8Q1_tr8"
+    service_type: "postgresql"
+    api_key: "SzI3OG40d0JEUkw5ajhRMURkclY6SWVYcVNSTmFUMWlVZ09RRlFmZl9DZw=="
+elasticsearch:
+  host: "http://elasticsearch:9200"
+  api_key: "SzI3OG40d0JEUkw5ajhRMURkclY6SWVYcVNSTmFUMWlVZ09RRlFmZl9DZw=="
