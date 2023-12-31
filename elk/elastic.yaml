@@ -22,6 +22,12 @@ spec:
               value: "single-node"
             - name: discovery.seed_hosts
               value: "0.0.0.0"
+            # - name: xpack.security.http.ssl.enabled
+            #   value: "false"
+            - name: ELASTIC_USERNAME
+              value: "elastic"
+            - name: ELASTIC_PASSWORD
+              value: "hX8veOCNwLOIqC9fkyfa"
 ---
 apiVersion: v1
 kind: Service
@@ -34,3 +40,30 @@ spec:
   ports:
     - port: 9200
       nodePort: 30034
+---
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: elasticsearch
+#   labels:
+#     name: elasticsearch
+#   annotations:
+#     cert-manager.io/issuer: "crm-issuer"
+#     traefik.ingress.kubernetes.io/router.tls: "true"
+#     traefik.ingress.kubernetes.io/router.entrypoints: websecure
+# spec:
+#   tls:
+#     - hosts:
+#         - es.relationc.com:8200
+#       secretName: elasticsearch-ssl
+#   rules:
+#     - host: es.relationc.com:8200
+#       http:
+#         paths:
+#           - pathType: Prefix
+#             path: "/"
+#             backend:
+#               service:
+#                 name: elasticsearch
+#                 port:
+#                   number: 9200
