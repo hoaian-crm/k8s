@@ -37,6 +37,7 @@ data:
   Plugin: http://plugins-service:3000/api/v1
   Mail: http://mail-service:3000/api/v1
   sales: http://sale-service:3000/api/v1
+  customers: http://customer-service:3000/api/v1
   # Grpc
   EVENT_GRPC: event-gateway:5000
   STORAGE_GRPC: storage-service:50051
