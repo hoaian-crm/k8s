@@ -1,7 +1,7 @@
 connectors:
-  - connector_id: "Km77n4wBDRL9j8Q1_tr8"
+  - connector_id: "gyY6oYwB4zHsbhtJOLBG"
     service_type: "postgresql"
-    api_key: "SzI3OG40d0JEUkw5ajhRMURkclY6SWVYcVNSTmFUMWlVZ09RRlFmZl9DZw=="
+    api_key: "aENZNm9Zd0I0ekhzYmh0SlJyRHE6b05VS0VKanFUcEdHZm5LOGVDeURPQQ=="
 elasticsearch:
-  host: "http://elasticsearch:9200"
-  api_key: "SzI3OG40d0JEUkw5ajhRMURkclY6SWVYcVNSTmFUMWlVZ09RRlFmZl9DZw=="
+  host: "https://relationc.com"
+  api_key: "aENZNm9Zd0I0ekhzYmh0SlJyRHE6b05VS0VKanFUcEdHZm5LOGVDeURPQQ=="
