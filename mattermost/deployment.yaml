@@ -27,11 +27,37 @@ kind: Service
 metadata:
   name: mattermost
 spec:
-  type: NodePort
   selector:
     app: mattermost
     name: mattermost
   ports:
     - port: 8065
       targetPort: 8065
-      nodePort: 30030
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mattermost
+  namespace: default
+  annotations:
+    cert-manager.io/issuer: "crm-issuer"
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+spec:
+  tls:
+    - hosts:
+        - mattermost.relationc.com
+      secretName: mattermost-ssl
+  rules:
+  - host: mattermost.relationc.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: mattermost
+            port:
+              number: 8065
+---
+
