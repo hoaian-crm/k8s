@@ -8,7 +8,7 @@ metadata:
     app: crm
 data:
   # NODEJS
-  NODE_ENV: development
+  NODE_ENV: production
   # Database
   GORM_DSN: "host=postgres user=crm-manager password=strong#password dbname=crm-dev port=5432"
   PG_USER: crm-manager
@@ -44,3 +44,8 @@ data:
   STORAGE_GRPC: storage-service:50051
   Product: http://products-service:3000/api/v1
   GOONG_MAP_API_KEY: b2BHdFHIpa58n6uj3McKOAgBEoKC6wvs51FuxwRj
+  # Github branch
+  BRANCHES.development: dev
+  BRANCHES.production: master
+  # Mattermost
+  MATTERMOST_WEB_HOOK: https://mattermost.relationc.com/hooks/wf4fogqq8ib5zx61dd9oe7hifc
