@@ -54,4 +54,4 @@ data:
   MINIO_PORT: "443"
   MINIO_ACCESS_KEY: P6lE1v297N41fOab3MHX
   MINIO_SECRET_KEY: 5ssNg5WmxBupeY9iYGF1TamGA7cvGfVTaJtR1sU5
-  PRODUCT_IMAGE_PREFIX: https://s3.relationc.com/crm/images/products
+  PRODUCT_IMAGE_PREFIX: https://s3.relationc.com/crm/images/products/
