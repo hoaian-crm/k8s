@@ -49,3 +49,9 @@ data:
   BRANCHES.production: master
   # Mattermost
   MATTERMOST_WEB_HOOK: https://mattermost.relationc.com/hooks/wf4fogqq8ib5zx61dd9oe7hifc
+  # Minio
+  MINIO_ENDPOINT: s3.relationc.com
+  MINIO_PORT: 443
+  MINIO_ACCESS_KEY: P6lE1v297N41fOab3MHX
+  MINIO_SECRET_KEY: 5ssNg5WmxBupeY9iYGF1TamGA7cvGfVTaJtR1sU5
+  PRODUCT_IMAGE_PREFIX: https://s3.relationc.com/crm/images/products
