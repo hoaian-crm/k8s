@@ -1,4 +1,3 @@
-
 # Kubernetes API version
 apiVersion: apps/v1
 # Deployment object

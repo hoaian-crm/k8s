@@ -1,43 +1,47 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-novu
+  name: admin-notifications
   labels:
-    app: nginx-novu
+    app: admin-notifications
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx-novu-test
+      app: web-admin-notifications
   template:
     metadata:
       labels:
-        app: nginx-novu-test
+        app: web-admin-notifications
     spec:
       containers:
-        - name: nginx
-          image: nginx:1.14.2
+        - envFrom:
+            - configMapRef:
+                name: novu-env
+          name: web
+          image: ghcr.io/novuhq/novu/web:0.22.0
           ports:
-            - containerPort: 80
+            - containerPort: 4200
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-novu
+  name: admin-notifications-service
   labels:
-    app: nginx-novu-service
+    app: web-notificationis-service
 spec:
   selector:
-    app: nginx-novu-test
+    app: web-admin-notifications
   ports:
     - port: 80
+      targetPort: 4200
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: nginx-novu
+  name: dashboar-notifications
   labels:
-    name: novu-nginx
+    name: dashboar-notifications
   annotations:
     cert-manager.io/issuer: "crm-issuer"
     traefik.ingress.kubernetes.io/router.tls: "true"
@@ -46,7 +50,7 @@ spec:
   tls:
     - hosts:
         - notifications.relationc.com
-      secretName: novu-ssl
+      secretName: dashboard-ssl
   rules:
     - host: notifications.relationc.com
       http:
@@ -55,7 +59,6 @@ spec:
             path: "/"
             backend:
               service:
-                name: nginx-novu
+                name: admin-notifications-service
                 port:
                   number: 80
----

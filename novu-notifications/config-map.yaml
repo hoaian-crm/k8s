@@ -3,9 +3,9 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   # Name your ConfigMap
-  name: notifications-env
+  name: novu-env
   labels:
-    app: notifications-env
+    app: novu-env
 data:
   # NODEJS
   JWT_SECRET: JWT_SECRET
