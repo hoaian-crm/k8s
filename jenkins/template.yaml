@@ -50,11 +50,11 @@ spec:
               containerPort: 50000
           volumeMounts:
             - name: jenkins-data
-              mountPath: /var/jenkins_home         
+              mountPath: /var/jenkins_home
       volumes:
         - name: jenkins-data
           persistentVolumeClaim:
-              claimName: jenkins
+            claimName: jenkins
 ---
 apiVersion: v1
 kind: Service
@@ -64,9 +64,9 @@ spec:
   selector:
     app: jenkins
   ports:
-  - name: jenkins
-    protocol: TCP
-    port: 8080
+    - name: jenkins
+      protocol: TCP
+      port: 8080
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -82,13 +82,13 @@ spec:
         - jenkins.relationc.com
       secretName: jenkins-ssl
   rules:
-  - host: jenkins.relationc.com
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: jenkins
-            port:
-              number: 8080
+    - host: jenkins.relationc.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: jenkins
+                port:
+                  number: 8080
