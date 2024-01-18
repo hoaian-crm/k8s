@@ -20,6 +20,7 @@ resources:
   - ws-service.yaml
   - worker-deployment.yaml
   - worker-service.yaml
+  - iss.yaml
   - ingress.yaml
 
 # namespace

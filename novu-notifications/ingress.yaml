@@ -5,7 +5,7 @@ metadata:
   labels:
     name: dashboar-notifications
   annotations:
-    cert-manager.io/issuer: "crm-issuer"
+    cert-manager.io/issuer: "novu-crm-issuer"
     traefik.ingress.kubernetes.io/router.tls: "true"
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
 spec:
@@ -21,7 +21,7 @@ spec:
             path: "/"
             backend:
               service:
-                name: novu-web-dev
+                name: novu-web
                 port:
                   number: 80
 ---
@@ -32,7 +32,7 @@ metadata:
   labels:
     name: api-notifications
   annotations:
-    cert-manager.io/issuer: "crm-issuer"
+    cert-manager.io/issuer: "novu-crm-issuer"
     traefik.ingress.kubernetes.io/router.tls: "true"
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
 spec:
@@ -48,7 +48,7 @@ spec:
             path: "/"
             backend:
               service:
-                name: novu-api-dev
+                name: novu-api
                 port:
                   number: 3000
 ---
@@ -75,6 +75,6 @@ spec:
             path: "/"
             backend:
               service:
-                name: novu-ws-dev
+                name: novu-ws
                 port:
                   number: 3002
