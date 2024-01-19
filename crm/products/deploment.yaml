@@ -20,7 +20,7 @@ spec:
       containers:
         # The container name to execute pods
         - name: products
-          image: 11112003/crm-product:master
+          image: ghcr.io/hoaian-crm/products:master
           envFrom:
             - configMapRef:
                 name: "crm-env"

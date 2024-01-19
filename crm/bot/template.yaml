@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  mattermost-bot
+  namespace: default
+  labels:
+    app:  mattermost-bot
+spec:
+  selector:
+    matchLabels:
+      app: mattermost-bot
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app:  mattermost-bot
+    spec:
+      containers:
+      - name:  mattermost-bot
+        image:  ghcr.io/hoaian-crm/mattermost-bot:master
+        imagePullPolicy: Always
+        envFrom:
+          - configMapRef:
+              name: "crm-env"
+        ports:
+        - containerPort:  3000
+---
+# https://kubernetes.io/docs/concepts/services-networking/service/
+apiVersion: v1
+kind: Service
+metadata:
+  name: mattermost-bot-service
+  namespace: default
+spec:
+  selector:
+    app: mattermost-bot
+  ports:
+  - name: mattermost-bot-service
+    protocol: TCP
+    port: 3000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mattermost-bot-ingress
+  namespace: default
+  annotations:
+    cert-manager.io/issuer: "crm-issuer"
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+spec:
+  tls:
+    - hosts:
+        - mattermost-bot.relationc.com
+      secretName: mattermost-bot-ssl
+  rules:
+  - host: mattermost-bot.relationc.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: mattermost-bot-service
+            port:
+              number: 3000
+---

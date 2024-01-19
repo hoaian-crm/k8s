@@ -39,6 +39,7 @@ data:
   sales: http://sale-service:3000/api/v1
   customers: http://customer-service:3000/api/v1
   Tag: http://tag-service:3000/api/v1
+  Bot: http://mattermost-bot-service:3000
   # Grpc
   EVENT_GRPC: event-gateway:5000
   STORAGE_GRPC: storage-service:50051
@@ -49,6 +50,8 @@ data:
   BRANCHES.production: master
   # Mattermost
   MATTERMOST_WEB_HOOK: https://mattermost.relationc.com/hooks/wf4fogqq8ib5zx61dd9oe7hifc
+  MATTERMOST_SERVER: https://mattermost.relationc.com
+  GITHUB_BOT_ACCESSTOKEN: 3hmqh1r6u3bt9pzpz3kcpty61r
   # Minio
   MINIO_ENDPOINT: s3.relationc.com
   MINIO_PORT: "443"
