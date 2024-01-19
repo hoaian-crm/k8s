@@ -3,7 +3,7 @@ apiVersion: apps/v1
 # Deployment object
 kind: Deployment
 metadata:
-  name: sale
+  name: sales
 spec:
   replicas: 1
   selector:
@@ -15,12 +15,12 @@ spec:
       labels:
         # The label the pods created from the pod template should have
         app: crm
-        name: sale
+        name: sales
     spec:
       containers:
         # The container name to execute pods
-        - name: sale
-          image: "11112003/crm-sales:master"
+        - name: sales
+          image: "ghcr.io/hoaian-crm/sales:master"
           envFrom:
             - configMapRef:
                 name: "crm-env"
