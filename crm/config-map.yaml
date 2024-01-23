@@ -36,7 +36,7 @@ data:
   Authentication: http://authentication-service:8080/api/v1
   Plugin: http://plugins-service:3000/api/v1
   Mail: http://mail-service:3000/api/v1
-  sales: http://sale-service:3000/api/v1
+  Sale: http://sale-service:3000/api/v1
   customers: http://customer-service:3000/api/v1
   Tag: http://tag-service:3000/api/v1
   Bot: http://mattermost-bot-service:3000
