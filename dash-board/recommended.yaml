@@ -310,7 +310,7 @@ metadata:
   name: insecure-transport
   namespace: kubernetes-dashboard
 spec:
-  serverName: "dashboard.relationc.com"
+  serverName: "dashboard.poolsmobility.com"
   insecureSkipVerify: true
 ---
 apiVersion: traefik.containo.us/v1alpha1
@@ -322,7 +322,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: "Host(`dashboard.relationc.com`)"
+    - match: "Host(`dashboard.poolsmobility.com`)"
       kind: Rule
       services:
         - name: kubernetes-dashboard
