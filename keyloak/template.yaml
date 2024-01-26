@@ -1,0 +1,79 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: keyloak
+---
+# https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  keyloak
+  namespace: keyloak
+  labels:
+    app:  keyloak
+spec:
+  selector:
+    matchLabels:
+      app: keyloak
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app:  keyloak
+    spec:
+      containers:
+      - name:  keyloak
+        image:  quay.io/keycloak/keycloak:23.0.4
+        args: ["start", "--hostname", "keyloak.relationc.com"]
+        env:
+        - name: KEYCLOAK_ADMIN_PASSWORD
+          value: "123123123"
+        - name: KEYCLOAK_ADMIN
+          value: admin
+        ports:
+          - containerPort: 8080
+        readinessProbe:
+            httpGet:
+              path: /realms/master
+              port: 8080
+---
+# https://kubernetes.io/docs/concepts/services-networking/service/
+apiVersion: v1
+kind: Service
+metadata:
+  name: keyloak
+  namespace: keyloak
+spec:
+  selector:
+    app: keyloak
+  ports:
+  - name: keyloak
+    port: 80
+    targetPort: 8080
+---
+# Https ingress
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: keyloak
+  namespace: keyloak
+  annotations:
+    cert-manager.io/cluster-issuer: "ca-issuer"
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+spec:
+  tls:
+    - hosts:
+        - keyloak.relationc.com
+      secretName: keyloak-ssl
+  rules:
+    - host: keyloak.relationc.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: keyloak
+                port:
+                  number: 80
